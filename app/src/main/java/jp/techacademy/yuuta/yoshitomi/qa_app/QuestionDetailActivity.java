@@ -17,8 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
-
 /**
  * Created by yoshitomi on 2017/04/08.
  */
@@ -79,7 +77,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activty_question_detail);
+        setContentView(R.layout.activity_question_detail);
 
         Bundle extras = getIntent().getExtras();
         mQuestion = (Question) extras.get("question");
@@ -101,7 +99,9 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                 } else {
-
+                    Intent intent = new Intent(getApplicationContext(), AnswerSendActivity.class);
+                    intent.putExtra("question", mQuestion);
+                    startActivity(intent);
                 }
             }
         });

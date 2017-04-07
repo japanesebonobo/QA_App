@@ -12,10 +12,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by yoshitomi on 2017/04/07.
- */
-
 public class QuestionsListAdapter extends BaseAdapter{
     private LayoutInflater mLayoutInflater = null;
     private ArrayList<Question> mQuestionArrayList;
@@ -41,6 +37,7 @@ public class QuestionsListAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.list_questions, parent, false);
         }
